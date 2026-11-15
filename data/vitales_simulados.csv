@@ -1,0 +1,57 @@
+astro_id,dia,pulso,spo2,sistolica,diastolica,temp_c,sueno_h,ejercicio_min,tension,animo,concentracion,calidad_sueno,cansancio,dosis_mGy_dia,entorno_dosis,color_orina,escenario,fuente
+C001,29,63,98,113,74,36.6,7.6,45,4,4,4,4,no,0.206,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,30,62,97,116,72,36.6,7.7,55,4,4,4,4,no,0.181,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,31,61,97,116,75,36.8,7.5,55,4,4,4,4,no,0.169,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,32,61,99,116,75,36.7,7.3,50,4,4,4,4,no,0.175,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,33,61,98,114,73,36.7,7.6,50,4,4,4,4,no,0.179,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,34,62,99,118,73,36.6,7.5,50,4,4,4,4,no,0.185,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,35,63,98,115,73,36.5,7.5,55,4,4,4,4,no,0.169,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,36,66,97,114,74,36.6,7.4,50,4,4,4,4,no,0.183,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,37,61,98,116,74,36.5,7.3,45,4,4,4,4,no,0.194,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,38,62,99,113,74,36.6,7.3,55,4,4,4,4,no,0.181,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,39,64,98,116,73,36.4,7.6,60,4,4,4,4,no,0.2,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,40,62,99,118,75,36.5,7.6,50,4,4,4,4,no,0.203,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,41,64,98,116,76,36.6,7.1,45,4,4,4,4,no,0.187,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C001,42,60,98,118,74,36.6,7.4,50,4,4,4,4,no,0.175,Órbita terrestre baja (estación),amarillo_claro,Misión tranquila,SIMULADO
+C002,29,71,98,112,72,36.7,7.2,45,4,4,4,4,no,0.188,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,30,70,98,116,76,36.8,7.5,40,4,4,4,4,no,0.178,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,31,72,98,114,75,36.8,7.4,45,4,4,4,4,no,0.188,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,32,73,99,114,74,36.7,7.6,45,4,4,4,4,no,0.198,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,33,71,98,115,76,36.7,7.4,40,4,4,4,4,no,0.201,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,34,69,99,113,75,36.7,7.5,45,4,4,4,4,no,0.181,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,35,72,97,113,74,36.7,7.5,45,4,4,4,4,no,0.198,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,36,74,99,116,73,36.6,7.6,50,4,4,4,4,no,0.22,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,37,73,99,112,73,36.8,7.7,40,4,4,4,4,no,0.225,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,38,72,99,115,75,36.7,7.5,40,4,4,4,4,no,0.193,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,39,74,98,114,76,36.7,7.6,45,4,4,4,4,no,0.175,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,40,78,97,115,74,36.7,5.9,35,4,4,4,2,no,0.18,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,41,80,97,113,73,36.8,5.6,30,4,4,4,2,no,0.195,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C002,42,82,97,113,72,36.6,5.8,30,4,4,4,2,no,0.18,Órbita terrestre baja (estación),amarillo_claro,Su pulso sube,SIMULADO
+C003,29,66,97,117,73,36.9,7.7,40,4,4,4,4,no,0.303,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,30,64,97,116,75,36.8,7.6,40,4,4,4,4,no,0.293,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,31,65,97,113,75,36.8,7.6,50,4,4,4,4,no,0.295,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,32,65,97,114,75,36.9,7.5,40,4,4,4,4,no,0.304,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,33,64,96,112,73,36.9,7.5,45,4,4,4,4,no,0.3,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,34,66,97,116,74,36.9,7.5,50,4,4,4,4,no,0.295,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,35,70,97,114,76,36.8,7.6,40,4,4,4,4,no,0.299,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,36,66,96,115,76,36.9,7.8,50,4,4,4,4,no,0.298,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,37,67,96,115,75,36.8,6.5,45,4,4,4,3,no,0.307,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,38,67,96,111,73,36.6,6.1,40,4,4,4,3,no,0.301,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,39,68,97,113,75,36.9,5.7,45,4,4,4,2,no,0.309,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,40,63,98,115,76,36.9,5.2,40,2,4,3,2,sí,0.3,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,41,71,97,115,75,36.8,4.8,50,2,4,3,2,sí,0.305,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C003,42,66,97,113,75,36.8,4.4,45,2,4,3,2,sí,0.302,Superficie lunar,amarillo_claro,Duerme poco,SIMULADO
+C004,29,76,98,110,73,36.5,7.4,40,4,4,4,4,no,0.46,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,30,73,98,111,72,36.5,7.4,35,4,4,4,4,no,0.437,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,31,73,100,110,74,36.5,7.2,40,4,4,4,4,no,0.459,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,32,73,99,112,71,36.5,7.4,45,4,4,4,4,no,0.444,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,33,74,100,111,74,36.5,7.5,40,4,4,4,4,no,0.449,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,34,75,99,111,72,36.6,7.5,40,4,4,4,4,no,0.45,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,35,76,98,114,71,36.4,7.5,40,4,4,4,4,no,0.463,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,36,76,99,112,73,36.4,7.4,40,4,4,4,4,no,0.455,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,37,75,99,114,74,36.5,7.5,40,4,4,4,4,no,0.449,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,38,76,99,112,72,36.6,7.6,40,4,4,4,4,no,0.452,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,39,73,100,111,70,36.5,6.2,40,4,4,4,4,sí,12.725,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,40,78,99,114,71,36.5,7.6,40,4,4,4,4,sí,0.587,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,41,76,99,115,72,36.5,7.8,40,4,4,4,4,no,0.45,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
+C004,42,74,99,112,72,36.5,7.3,35,4,4,4,4,no,0.454,Tránsito en espacio profundo,amarillo_claro,Evento de radiación,SIMULADO
