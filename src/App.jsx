@@ -13,10 +13,19 @@ function ScrollToTop() {
   return null;
 }
 
-// Al abrir la app (carga inicial o recarga) siempre se muestra Línea Base primero.
+// Se decide una sola vez, al cargar la página: ¿se abrió la app o solo se recargó?
+// Si se recargó (o se volvió con atrás/adelante), la app se queda en la vista donde estaba.
+const OPENED_FRESH = (() => {
+  try {
+    const nav = window.performance.getEntriesByType('navigation')[0];
+    return !nav || nav.type === 'navigate';
+  } catch (e) { return true; }
+})();
+
+// Al abrir la app se muestra Línea Base primero. Una recarga no cambia de vista.
 function StartOnLineaBase() {
   const navigate = useNavigate();
-  useEffect(() => { navigate('/linea-base', { replace: true }); }, []);
+  useEffect(() => { if (OPENED_FRESH) navigate('/linea-base', { replace: true }); }, []);
   return null;
 }
 

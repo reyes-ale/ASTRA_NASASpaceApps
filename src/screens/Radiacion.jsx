@@ -4,7 +4,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SimBar from '../components/SimBar.jsx';
 import Stella from '../components/Stella.jsx';
+import { loadDraft, saveDraft, clearDraft } from '../draft.js';
 import radData from '../data/rad_data.json';
+
+const DRAFT_KEYS = ['filter', 'evSel', 'form', 'evForm'];
 
 class Radiacion extends React.Component {
 RAD = radData;
@@ -40,12 +43,25 @@ const s = window.localStorage.getItem('astra.lang');
 if (s === 'en' || s === 'es') lang = s;
 if (window.localStorage.getItem('astra.online') === '0') online = false;
 } catch (e) {}
-this.setState({ lang: lang, online: online });
+// recarga: se conserva lo que se estaba escribiendo en los formularios
+const draft = loadDraft('astra.draft.rad');
+const keep = {};
+if (draft) DRAFT_KEYS.forEach((k) => { if (draft[k] !== undefined && draft[k] !== null) keep[k] = draft[k]; });
+this.setState(Object.assign({ lang: lang, online: online }, keep));
 this.simPoll();
 this.simT = setInterval(() => this.simPoll(), 700);
 if (online) this.syncAll();
 }
-componentWillUnmount() { if (this.simT) clearInterval(this.simT); }
+// Guarda lo escrito en los formularios para retomarlo si la página se recarga.
+componentDidUpdate() {
+const d = {};
+DRAFT_KEYS.forEach((k) => { d[k] = this.state[k]; });
+const snap = JSON.stringify(d);
+if (snap === this.draftSnap) return;
+this.draftSnap = snap;
+saveDraft('astra.draft.rad', d);
+}
+componentWillUnmount() { if (this.simT) clearInterval(this.simT); clearDraft('astra.draft.rad'); }
 remember(key, value) { try { window.localStorage.setItem(key, value); } catch (e) {} }
 load(key, def) { try { const v = JSON.parse(window.localStorage.getItem(key) || 'null'); return v === null ? def : v; } catch (e) { return def; } }
 syncAll() {

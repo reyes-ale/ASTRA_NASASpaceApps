@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SimBar from '../components/SimBar.jsx';
 import Stella from '../components/Stella.jsx';
+import { loadDraft, saveDraft, clearDraft } from '../draft.js';
 
 class Emergencia extends React.Component {
 state = { lang: 'en', online: true, sit: 'unresponsive', step: 0, voice: false, voiceTick: 0 };
@@ -62,25 +63,39 @@ else if (el > reading * 1.5) finish();            // last resort, if the engine 
 setTimeout(() => { if (token !== this.speakToken) return; try { S.speak(u); } catch (e) {} }, 90);
 } catch (e) {}
 }
+// Guarda el protocolo y el paso para retomarlos si la página se recarga.
+saveProgress() {
+const snap = JSON.stringify({ sit: this.state.sit, step: this.state.step });
+if (snap === this.savedSnap) return;
+this.savedSnap = snap;
+saveDraft('astra.emerg', { sit: this.state.sit, step: this.state.step });
+}
 componentDidUpdate() {
+this.saveProgress();
 const key = this.state.voice ? [this.state.sit, this.state.step, this.state.lang, this.state.voiceTick].join('|') : '';
 if (key === this.spokenKey) return;
 this.spokenKey = key;
 if (key) this.speak(this.speakText); else this.stopSpeaking();
 }
-componentWillUnmount() { this.stopSpeaking(); }
+componentWillUnmount() { this.stopSpeaking(); clearDraft('astra.emerg'); }
 componentDidMount() {
 let lang = /^es/i.test((typeof navigator !== 'undefined' && navigator.language) || '') ? 'es' : 'en';
 let online = true;
 let sit = this.state.sit;
+let step = 0;
 try {
 const s = window.localStorage.getItem('astra.lang');
 if (s === 'en' || s === 'es') lang = s;
 if (window.localStorage.getItem('astra.online') === '0') online = false;
 const asked = window.localStorage.getItem('astra.sit');
 if (asked) { sit = asked; window.localStorage.removeItem('astra.sit'); }
+else {
+// recarga en medio de una emergencia: se retoma el mismo protocolo y el mismo paso
+const saved = loadDraft('astra.emerg');
+if (saved && typeof saved.sit === 'string') { sit = saved.sit; step = Math.max(0, parseInt(saved.step, 10) || 0); }
+}
 } catch (e) {}
-this.setState({ lang: lang, online: online, sit: sit });
+this.setState({ lang: lang, online: online, sit: sit, step: step });
 }
 remember(key, value) { try { window.localStorage.setItem(key, value); } catch (e) {} }
 shared(L) {

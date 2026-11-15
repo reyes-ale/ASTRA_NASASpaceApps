@@ -4,7 +4,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SimBar from '../components/SimBar.jsx';
 import Stella from '../components/Stella.jsx';
+import { loadDraft, saveDraft, clearDraft } from '../draft.js';
 import { MeasureMode } from '../components/AutoMeasure.jsx';
+
+const DRAFT_KEYS = ['step', 'ctx', 'strip', 'flags', 'answers', 'mode', 'autoFail', 'autoNote', 'autoRun', 'vals'];
 
 class Chequeo extends React.Component {
 state = { lang: 'en', online: true, step: 0, ctx: 'rest', strip: '', flags: {}, answers: {}, mode: {}, autoFail: {}, autoNote: {}, autoRun: 0, vals: { hr: '', spo2: '', sys: '', dia: '', temp: '', exh: '', exm: '', sleeph: '' } };
@@ -38,10 +41,25 @@ const s = window.localStorage.getItem('astra.lang');
 if (s === 'en' || s === 'es') lang = s;
 if (window.localStorage.getItem('astra.online') === '0') online = false;
 } catch (e) {}
-this.setState({ lang: lang, online: online });
+// recarga en medio del chequeo: se retoma el mismo paso con lo que ya estaba escrito
+const draft = loadDraft('astra.draft.checkin');
+const keep = {};
+if (draft && draft.sim === this.simKey()) DRAFT_KEYS.forEach((k) => { if (draft[k] !== undefined && draft[k] !== null) keep[k] = draft[k]; });
+this.setState(Object.assign({ lang: lang, online: online }, keep));
 this.simPoll();
 this.simT = setInterval(() => this.simPoll(), 700);
 }
+simKey() { try { return window.localStorage.getItem('astra.sim') || ''; } catch (e) { return ''; } }
+// Guarda el avance del chequeo para retomarlo si la página se recarga.
+componentDidUpdate() {
+const d = { sim: this.simKey() };
+DRAFT_KEYS.forEach((k) => { d[k] = this.state[k]; });
+const snap = JSON.stringify(d);
+if (snap === this.draftSnap) return;
+this.draftSnap = snap;
+saveDraft('astra.draft.checkin', d);
+}
+componentWillUnmount() { if (this.simT) clearInterval(this.simT); clearDraft('astra.draft.checkin'); }
 remember(key, value) { try { window.localStorage.setItem(key, value); } catch (e) {} }
 shared(L) {
 const lang = this.state.lang;
