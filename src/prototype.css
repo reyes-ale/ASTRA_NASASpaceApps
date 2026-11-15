@@ -40,3 +40,32 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #F1F4
 @media (prefers-reduced-motion: reduce){.tr-draw,.tr-grow,.tr-pop,.tr-fade,.tr-ring,.tr-needle,.tr-wave,.tr-fill{animation:none;stroke-dashoffset:0}}
 @media (prefers-reduced-motion: reduce){.tr-draw,.tr-fade{animation:none;stroke-dashoffset:0}}
 body{margin:0}
+
+/* Header: one row on laptops, compact on phones. Inline styles come from the prototype, so these rules use !important. */
+.astra-header{gap:8px 10px !important}
+.astra-header>div:first-of-type{max-width:176px}
+.astra-header>nav{gap:2px !important}
+.astra-header>nav>a{padding:0 10px !important;gap:6px !important;font-size:14px;white-space:nowrap}
+.astra-header>div[role="group"]>button{padding:0 12px !important;font-size:14px}
+.astra-header>button,.astra-header>a{padding:0 14px !important;font-size:14px;white-space:nowrap}
+@media (max-width:1340px){
+.astra-header>nav>a{padding:0 8px !important}
+.astra-header>nav>a>svg{display:none}
+}
+@media (max-width:720px){
+.astra-header{gap:8px !important}
+.astra-header>img{width:40px !important;height:40px !important}
+.astra-header>div:first-of-type{flex:1 1 0;min-width:0;max-width:none}
+.astra-header>div:first-of-type>span:first-child{font-size:20px !important}
+.astra-header>div:first-of-type>span:last-child{font-size:11px !important}
+.astra-header>div[role="group"]{order:1}
+.astra-header>nav{order:2;flex:1 1 100% !important;flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent);padding-right:28px}
+.astra-header>nav::-webkit-scrollbar{display:none}
+.astra-header>nav>a{flex:0 0 auto;min-height:40px !important}
+.astra-header>button,.astra-header>a{order:3;flex:1 1 0;justify-content:center;min-height:40px !important}
+}
+/* Radiation charts keep a readable size on narrow screens and scroll sideways instead of shrinking. */
+@media (max-width:820px){
+.rad-chart-row{overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.rad-chart-box{flex:0 0 auto !important;width:620px;min-width:620px !important}
+}
