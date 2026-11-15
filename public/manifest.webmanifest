@@ -1,0 +1,16 @@
+{
+  "name": "ASTRA · Astronaut Self-health Tracking & Risk Assessment",
+  "short_name": "ASTRA",
+  "description": "Seguimiento de salud y evaluación de riesgos para astronautas",
+  "lang": "es",
+  "start_url": "/linea-base",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#030A2A",
+  "theme_color": "#030A2A",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Inicio from './screens/Inicio.jsx';
 import Chequeo from './screens/Chequeo.jsx';
 import Tendencias from './screens/Tendencias.jsx';
@@ -13,9 +13,17 @@ function ScrollToTop() {
   return null;
 }
 
+// Al abrir la app (carga inicial o recarga) siempre se muestra Línea Base primero.
+function StartOnLineaBase() {
+  const navigate = useNavigate();
+  useEffect(() => { navigate('/linea-base', { replace: true }); }, []);
+  return null;
+}
+
 export default function App() {
   return (
     <>
+      <StartOnLineaBase />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Inicio />} />
