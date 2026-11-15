@@ -79,3 +79,12 @@ En **Radiación → Registrar una medición**, el botón **Copiar mediciones en 
 
 - Stella responde con reglas y palabras clave, usando textos de la propia app. No es un modelo de IA conectado.
 - ASTRA ayuda a notar cambios. No hace diagnósticos.
+
+## Cambios del 15 de noviembre
+
+- **Chequeo, manual o automático:** en pulso, oxígeno, presión y temperatura se elige "Con un dispositivo automático" o "A mano". El modo automático está en `src/components/AutoMeasure.jsx`: simula la vinculación, dibuja el trazo en vivo y carga el valor. Si el dispositivo no envía datos en 15 segundos, avisa y pasa a ingreso manual. El botón "Demo: el dispositivo no responde" muestra ese caso. No hay ningún dispositivo real conectado y el panel lo marca como SIMULADO.
+- **Emergencia en voz alta:** el botón "Leer los pasos en voz alta" usa la voz del sistema (`speechSynthesis`) y lee solo los pasos de emergencia. Al terminar un paso sigue sola con el siguiente, y después del último vuelve a empezar, hasta que alguien pulse "Detener la lectura en voz alta".
+- **Inicio:** la tarjeta de radiación ahora lee lo que guarda Radiación (`astra.radev.individual` y `astra.radrec.individual`).
+- **Tendencias:** "Qué más cambió esta semana", el nivel, el consejo y "estás aquí" siguen al astronauta simulado. Las etiquetas de la gráfica ya no se enciman.
+- **Cabecera:** cabe en una fila en computadora y es compacta en teléfono (reglas `.astra-header` en `src/prototype.css`).
+- **Radiación en pantallas angostas:** las gráficas conservan un tamaño legible y se deslizan hacia los lados.
