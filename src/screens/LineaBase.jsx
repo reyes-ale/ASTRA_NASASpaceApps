@@ -71,8 +71,8 @@ field('weight', L('Weight', 'Peso'), 'kg')
 const normalFields = [
 field('hr', L('Heart rate while resting', 'Pulso en reposo'), L('beats/min', 'lat/min')),
 field('spo2', L('Oxygen in your blood', 'Oxígeno en la sangre'), '%'),
-field('sys', L('Blood pressure, top number', 'Presión arterial, número de arriba'), 'mmHg'),
-field('dia', L('Blood pressure, bottom number', 'Presión arterial, número de abajo'), 'mmHg'),
+field('sys', L('Systolic blood pressure, (top number)', 'Presión arterial sistólica, (número de arriba)'), 'mmHg'),
+field('dia', L('Diastolic blood pressure, (bottom number)', 'Presión arterial diastólica, (número de abajo)'), 'mmHg'),
 field('temp', L('Temperature', 'Temperatura'), '°C')
 ];
 const rangeHint = L('Healthy range: [FROM THE BIOMEDICAL TEAM]', 'Rango saludable: [DEL EQUIPO BIOMÉDICO]');
